@@ -10,16 +10,16 @@
 <title>[1] ES6 let与const用法总结 - Hexo</title>
 
 
-    <meta name="description" content="1、let命令es6新增了let命令，用于声明变量，声明的变量只在let命令所在的代码块内有效。 不存在变量提升 暂时性死区 只要块级作用域内存在let命令，它所声明的变量就“绑定”这个区域，不再受外部的影响。 不允许重复声明 2、块级作用域es5只用全局作用作用域和函数作用域，没有块级作用域，这带来了很多不合理的场景。 3、const命令基本用法 const声明一个只读的常量，一旦声明，常量的值">
+    <meta name="description" content="本文主要记录ES6与久规范下相比的不同之处。相比与ES5，ES6新增了let命令和const命令来声明变量与常量，一次来代替原本的var命令，依次避免var所带来的弊端。 1、let命令es6新增了let命令，用于声明变量，声明的变量只在let命令所在的代码块内有效。 不存在变量提升 暂时性死区 只要块级作用域内存在let命令，它所声明的变量就“绑定”这个区域，不再受外部的影响。 不允许重复声明">
 <meta name="keywords" content="ES6">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[1] ES6 let与const用法总结">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;10&#x2F;23&#x2F;1-ES6-let%E4%B8%8Econst%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1、let命令es6新增了let命令，用于声明变量，声明的变量只在let命令所在的代码块内有效。 不存在变量提升 暂时性死区 只要块级作用域内存在let命令，它所声明的变量就“绑定”这个区域，不再受外部的影响。 不允许重复声明 2、块级作用域es5只用全局作用作用域和函数作用域，没有块级作用域，这带来了很多不合理的场景。 3、const命令基本用法 const声明一个只读的常量，一旦声明，常量的值">
+<meta property="og:description" content="本文主要记录ES6与久规范下相比的不同之处。相比与ES5，ES6新增了let命令和const命令来声明变量与常量，一次来代替原本的var命令，依次避免var所带来的弊端。 1、let命令es6新增了let命令，用于声明变量，声明的变量只在let命令所在的代码块内有效。 不存在变量提升 暂时性死区 只要块级作用域内存在let命令，它所声明的变量就“绑定”这个区域，不再受外部的影响。 不允许重复声明">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;og_image.png">
-<meta property="og:updated_time" content="2019-10-23T15:32:23.341Z">
+<meta property="og:updated_time" content="2019-10-23T15:37:18.216Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;og_image.png">
 
@@ -148,7 +148,7 @@
                 <!-- <time class="level-item has-text-grey" datetime="2019-10-23T15:29:28.000Z">2019-10-23</time> -->
                 <time class="level-item has-text-grey" datetime="2019-10-23T15:29:28.000Z"><i class="far fa-calendar-alt">&nbsp;</i>2019-10-23</time>
                 
-                <time class="level-item has-text-grey is-hidden-mobile" datetime="2019-10-23T15:32:23.341Z"><i class="far fa-calendar-check">&nbsp;</i>2019-10-23</time>
+                <time class="level-item has-text-grey is-hidden-mobile" datetime="2019-10-23T15:37:18.216Z"><i class="far fa-calendar-check">&nbsp;</i>2019-10-23</time>
                 
                 
                 <div class="level-item">
@@ -160,7 +160,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 分钟 读完 (大约 347 个字)
+                    3 分钟 读完 (大约 416 个字)
                 </span>
                 
                 
@@ -179,7 +179,8 @@
             
         </h1> -->
         <div class="content">
-            <h1 id="1、let命令"><a href="#1、let命令" class="headerlink" title="1、let命令"></a>1、let命令</h1><p>es6新增了let命令，用于声明变量，声明的变量只在let命令所在的代码块内有效。</p>
+            <p>本文主要记录ES6与久规范下相比的不同之处。相比与ES5，ES6新增了let命令和const命令来声明变量与常量，一次来代替原本的var命令，依次避免var所带来的弊端。</p>
+<h1 id="1、let命令"><a href="#1、let命令" class="headerlink" title="1、let命令"></a>1、let命令</h1><p>es6新增了let命令，用于声明变量，声明的变量只在let命令所在的代码块内有效。</p>
 <p><strong>不存在变量提升</strong></p>
 <p><strong>暂时性死区</strong></p>
 <p>只要块级作用域内存在let命令，它所声明的变量就“绑定”这个区域，不再受外部的影响。</p>
