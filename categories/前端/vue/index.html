@@ -7,12 +7,12 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>标签: ES6 - Hexo</title>
+<title>分类: vue - Hexo</title>
 
 
     <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;tags&#x2F;ES6&#x2F;index.html">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;categories&#x2F;%E5%89%8D%E7%AB%AF&#x2F;vue&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;og_image.png">
@@ -129,8 +129,11 @@
     <div class="card-content">
         <nav class="breadcrumb" aria-label="breadcrumbs">
         <ul>
-            <li><a href="/tags">标签</a></li>
-            <li class="is-active"><a href="#" aria-current="page">ES6</a></li>
+            <li><a href="/categories">分类</a></li>
+            
+            <li><a href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></li>
+            
+            <li class="is-active"><a href="#" aria-current="page">vue</a></li>
         </ul>
         </nav>
     </div>
@@ -142,20 +145,20 @@
     <div class="card-content article ">
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal" style="font-weight: 800;">
             
-                <a class="has-link-black-ter" href="/2019/10/23/1-ES6-let%E4%B8%8Econst%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/"></i>[1] ES6 let与const用法总结</a>
+                <a class="has-link-black-ter" href="/2019/10/24/vue-js%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4%E4%BB%8B%E7%BB%8D%E4%B8%8E%E4%BD%BF%E7%94%A8/"></i>vue.js自定义指令介绍与使用</a>
             
         </h1>
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <!-- <time class="level-item has-text-grey" datetime="2019-10-23T15:29:28.000Z">2019-10-23</time> -->
-                <time class="level-item has-text-grey" datetime="2019-10-23T15:29:28.000Z"><i class="far fa-calendar-alt">&nbsp;</i>2019-10-23</time>
+                <!-- <time class="level-item has-text-grey" datetime="2019-10-24T13:35:25.000Z">2019-10-24</time> -->
+                <time class="level-item has-text-grey" datetime="2019-10-24T13:35:25.000Z"><i class="far fa-calendar-alt">&nbsp;</i>2019-10-24</time>
                 
-                <time class="level-item has-text-grey is-hidden-mobile" datetime="2019-10-24T03:29:04.365Z"><i class="far fa-calendar-check">&nbsp;</i>2019-10-24</time>
+                <time class="level-item has-text-grey is-hidden-mobile" datetime="2019-10-24T13:46:15.800Z"><i class="far fa-calendar-check">&nbsp;</i>2019-10-24</time>
                 
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%E5%89%8D%E7%AB%AF/ES6/">ES6</a>
+                <a class="has-link-grey -link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%E5%89%8D%E7%AB%AF/vue/">vue</a>
                 </div>
                 
                 
@@ -163,7 +166,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    3 分钟 读完 (大约 411 个字)
+                    8 分钟 读完 (大约 1191 个字)
                 </span>
                 
                 
@@ -173,11 +176,11 @@
         <br>
         <!-- <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/10/23/1-ES6-let%E4%B8%8Econst%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/">[1] ES6 let与const用法总结</a>
+                <a class="has-link-black-ter" href="/2019/10/24/vue-js%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4%E4%BB%8B%E7%BB%8D%E4%B8%8E%E4%BD%BF%E7%94%A8/">vue.js自定义指令介绍与使用</a>
             
         </h1> -->
         <div class="content">
-            <p>本文主要记录ES6与旧规范相比存在的不同。相较于ES5，ES6新增了let命令和const命令来声明变量与常量，用于代替原本的var命令，以此避免var所带来的弊端。</p>
+            <p>除了核心功能默认内置的指令 (<code>v-model</code> 和 <code>v-show</code>)，Vue 也允许注册自定义指令。有的情况下，你需要对普通 DOM 元素进行底层操作，这时候就会用到自定义指令。</p>
         </div>
         
         
@@ -188,13 +191,13 @@
                 
                 <div class="level-item is-size-7 is-uppercase">
                     <i class="fas fa-tags has-text-grey"></i>&nbsp;
-                    <a class="has-link-grey -link" href="/tags/ES6/" rel="tag">ES6</a>
+                    <a class="has-link-grey -link" href="/tags/vue/" rel="tag">vue</a>
                 </div>
                 
             </div>
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/10/23/1-ES6-let%E4%B8%8Econst%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/#more">阅读更多</a>
+                <a class="button is-size-7 is-light" href="/2019/10/24/vue-js%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4%E4%BB%8B%E7%BB%8D%E4%B8%8E%E4%BD%BF%E7%94%A8/#more">阅读更多</a>
                 </div>
             </div>
         </div>
