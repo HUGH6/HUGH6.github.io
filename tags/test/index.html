@@ -152,16 +152,16 @@ var _hmt = _hmt || [];
     <div class="card-content article ">
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal" style="font-weight: 800;">
             
-                <a class="has-link-black-ter" href="/2020/202001081514/"></i>test</a>
+                <a class="has-link-black-ter" href="/2020/202001081536/"></i>clock</a>
             
         </h1>
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <!-- <time class="level-item has-text-grey" datetime="2020-01-08T07:14:09.000Z">2020-01-08</time> -->
-                <time class="level-item has-text-grey" datetime="2020-01-08T07:14:09.000Z"><i class="far fa-calendar-alt">&nbsp;</i>2020-01-08</time>
+                <!-- <time class="level-item has-text-grey" datetime="2020-01-08T07:35:52.000Z">2020-01-08</time> -->
+                <time class="level-item has-text-grey" datetime="2020-01-08T07:35:52.000Z"><i class="far fa-calendar-alt">&nbsp;</i>2020-01-08</time>
                 
-                <time class="level-item has-text-grey is-hidden-mobile" datetime="2020-01-08T07:15:04.585Z"><i class="far fa-calendar-check">&nbsp;</i>2020-01-08</time>
+                <time class="level-item has-text-grey is-hidden-mobile" datetime="2020-01-08T07:36:42.575Z"><i class="far fa-calendar-check">&nbsp;</i>2020-01-08</time>
                 
                 
                 
@@ -169,7 +169,7 @@ var _hmt = _hmt || [];
                 <span class="level-item has-text-grey">
                     
                     
-                    几秒 读完 (大约 5 个字)
+                    2 分钟 读完 (大约 332 个字)
                 </span>
                 
                 
@@ -179,12 +179,132 @@ var _hmt = _hmt || [];
         <br>
         <!-- <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2020/202001081514/">test</a>
+                <a class="has-link-black-ter" href="/2020/202001081536/">clock</a>
             
         </h1> -->
         <div class="content">
-            <p>this is a test page.</p>
+            <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Neon Clock - by VincentTV</title>
+  <link href="https://fonts.font.im/css?family=Monoton" rel="stylesheet">
 
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      height: 100vh;
+      background: url(./bg.jpg) center center;
+      background-size: cover;
+    }
+    .neon-wrap {
+      width: 100vw;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+    .neon-text {
+      font-family: 'Monoton', cursive;
+      font-size: 50px;
+      color: #bbdefb;
+      text-shadow: -3px 0px 5px #bbdefb, 0px 0px 2px #bbdefb;
+    }
+    .neon-blink {
+      animation: neon 4s infinite;
+    }
+    .neon-clock {
+      font-family: 'Monoton', cursive;
+      font-size: 80px;
+      color: #FFEB3B;
+      text-shadow: -3px 0px 5px #FFEB3B, 0px 0px 2px #FFEB3B;
+    }
+    .neon-by {
+      color: #bbdefb;
+      text-shadow: -3px 0px 5px #bbdefb, 0px 0px 2px #bbdefb;
+    }
+    @keyframes neon {
+      0%, 30%, 32%, 34% {
+        color: #222;
+        text-shadow: -3px 0px 5px #222, 0px 0px 2px #222; 
+      }
+      31%, 33%, 35%, 100% {
+        color: #bbdefb;
+        text-shadow: -3px 0px 5px #bbdefb, 0px 0px 2px #bbdefb;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="neon-wrap">
+    <div class="neon-text">
+      CL<span class="neon-blink">O</span>C<span class="neon-blink">K</span>
+    </div>
+    <div class="neon-clock">
+      <span class="timer-num">1</span>
+      <span class="timer-num">2</span>
+      <span class="timer-sep">:</span>
+      <span class="timer-num">4</span>
+      <span class="timer-num">5</span>
+      <span class="timer-sep">:</span>
+      <span class="timer-num">7</span>
+      <span class="timer-num">8</span>
+    </div>
+    <div class="neon-by">by @VincentTV</div>
+  </div>
+
+  <script>
+    (function(w, d){
+      var timerCache = '',  //时间缓存
+          timerNum = d.querySelectorAll('.timer-num');  //取得dom对象
+      // 计时器，200ms执行一次
+      setInterval(timerUpdata, 200);
+      // 时间更新
+      function timerUpdata(){
+        var timerArr = timerHandler(new Date());
+        // 时间不变时立即返回
+        if(timerArr == null){
+          return;
+        }
+        //时间更新 dom
+        timerNum.forEach(function(element, index){
+          element.innerHTML = timerArr ? timerArr[index] : '-';//三元运算符，数组存在就替换
+        });
+      }
+      /**
+      * 时间数据处理
+      * @param {dateObj} 形参时间对象
+      * @returns {Array} 返回时间数组
+      */
+      function timerHandler(dateObj){
+        var hours = ('0' + dateObj.getHours()).slice(-2); //加 0 防止出现一位数
+        var min = ('0' + dateObj.getMinutes()).slice(-2); //通过slice 截取最后两位
+        var sec = ('0' + dateObj.getSeconds()).slice(-2);
+        var timerStr = hours + min + sec;
+        // 时间不变时返回null
+        if(timerStr == timerCache) {
+          return null;
+        }
+        timerCache = timerStr;//时间改变，更新缓存
+        return timerStr.split(''); //字符串转换数组，并返回
+      }
+    })(window, document);
+    /*
+    * B站：@VincentTV
+    * Share with you
+    * 主页：https://space.bilibili.com/402141442 
+    * 本视频：https://www.bilibili.com/video/av55264319/
+    * */
+  </script>
+
+</body>
+</html>
         </div>
         
         
@@ -369,16 +489,16 @@ var _hmt = _hmt || [];
         
         <article class="media">
             
-            <a href="/2020/202001081514/" class="media-left">
+            <a href="/2020/202001081536/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="test">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="clock">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-08T07:14:09.000Z">2020-01-08</time></div>
-                    <a href="/2020/202001081514/" class="title has-link-black-ter is-size-6 has-text-weight-normal">test</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-08T07:35:52.000Z">2020-01-08</time></div>
+                    <a href="/2020/202001081536/" class="title has-link-black-ter is-size-6 has-text-weight-normal">clock</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -388,7 +508,7 @@ var _hmt = _hmt || [];
         
         <article class="media">
             
-            <a href="/2019/ck54yxgp2000560tr2cew90up/" class="media-left">
+            <a href="/2019/201911010101/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="vue.js自定义指令介绍与使用">
                 </p>
@@ -397,7 +517,7 @@ var _hmt = _hmt || [];
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-24T13:35:25.000Z">2019-10-24</time></div>
-                    <a href="/2019/ck54yxgp2000560tr2cew90up/" class="title has-link-black-ter is-size-6 has-text-weight-normal">vue.js自定义指令介绍与使用</a>
+                    <a href="/2019/201911010101/" class="title has-link-black-ter is-size-6 has-text-weight-normal">vue.js自定义指令介绍与使用</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a> / <a class="has-link-grey -link" href="/categories/%E5%89%8D%E7%AB%AF/vue/">vue</a>
                     </p>
@@ -407,7 +527,7 @@ var _hmt = _hmt || [];
         
         <article class="media">
             
-            <a href="/2019/ck54yxgom000060tr65814i3n/" class="media-left">
+            <a href="/2019/201910010101/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="[1] ES6 let与const用法总结">
                 </p>
@@ -416,7 +536,7 @@ var _hmt = _hmt || [];
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-23T15:29:28.000Z">2019-10-23</time></div>
-                    <a href="/2019/ck54yxgom000060tr65814i3n/" class="title has-link-black-ter is-size-6 has-text-weight-normal">[1] ES6 let与const用法总结</a>
+                    <a href="/2019/201910010101/" class="title has-link-black-ter is-size-6 has-text-weight-normal">[1] ES6 let与const用法总结</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a> / <a class="has-link-grey -link" href="/categories/%E5%89%8D%E7%AB%AF/ES6/">ES6</a>
                     </p>
@@ -426,7 +546,7 @@ var _hmt = _hmt || [];
         
         <article class="media">
             
-            <a href="/2019/ck54yxgov000160tr1q57adgx/" class="media-left">
+            <a href="/2019/201909010101/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="Hello World">
                 </p>
@@ -435,7 +555,7 @@ var _hmt = _hmt || [];
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-23T06:35:16.570Z">2019-10-23</time></div>
-                    <a href="/2019/ck54yxgov000160tr1q57adgx/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hello World</a>
+                    <a href="/2019/201909010101/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hello World</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -500,16 +620,16 @@ var _hmt = _hmt || [];
         
         <article class="media">
             
-            <a href="/2020/202001081514/" class="media-left">
+            <a href="/2020/202001081536/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="test">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="clock">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-08T07:14:09.000Z">2020-01-08</time></div>
-                    <a href="/2020/202001081514/" class="title has-link-black-ter is-size-6 has-text-weight-normal">test</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-08T07:35:52.000Z">2020-01-08</time></div>
+                    <a href="/2020/202001081536/" class="title has-link-black-ter is-size-6 has-text-weight-normal">clock</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -519,7 +639,7 @@ var _hmt = _hmt || [];
         
         <article class="media">
             
-            <a href="/2019/ck54yxgp2000560tr2cew90up/" class="media-left">
+            <a href="/2019/201911010101/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="vue.js自定义指令介绍与使用">
                 </p>
@@ -528,7 +648,7 @@ var _hmt = _hmt || [];
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-24T13:35:25.000Z">2019-10-24</time></div>
-                    <a href="/2019/ck54yxgp2000560tr2cew90up/" class="title has-link-black-ter is-size-6 has-text-weight-normal">vue.js自定义指令介绍与使用</a>
+                    <a href="/2019/201911010101/" class="title has-link-black-ter is-size-6 has-text-weight-normal">vue.js自定义指令介绍与使用</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a> / <a class="has-link-grey -link" href="/categories/%E5%89%8D%E7%AB%AF/vue/">vue</a>
                     </p>
@@ -538,7 +658,7 @@ var _hmt = _hmt || [];
         
         <article class="media">
             
-            <a href="/2019/ck54yxgom000060tr65814i3n/" class="media-left">
+            <a href="/2019/201910010101/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="[1] ES6 let与const用法总结">
                 </p>
@@ -547,7 +667,7 @@ var _hmt = _hmt || [];
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-23T15:29:28.000Z">2019-10-23</time></div>
-                    <a href="/2019/ck54yxgom000060tr65814i3n/" class="title has-link-black-ter is-size-6 has-text-weight-normal">[1] ES6 let与const用法总结</a>
+                    <a href="/2019/201910010101/" class="title has-link-black-ter is-size-6 has-text-weight-normal">[1] ES6 let与const用法总结</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a> / <a class="has-link-grey -link" href="/categories/%E5%89%8D%E7%AB%AF/ES6/">ES6</a>
                     </p>
@@ -557,7 +677,7 @@ var _hmt = _hmt || [];
         
         <article class="media">
             
-            <a href="/2019/ck54yxgov000160tr1q57adgx/" class="media-left">
+            <a href="/2019/201909010101/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="Hello World">
                 </p>
@@ -566,7 +686,7 @@ var _hmt = _hmt || [];
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-23T06:35:16.570Z">2019-10-23</time></div>
-                    <a href="/2019/ck54yxgov000160tr1q57adgx/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hello World</a>
+                    <a href="/2019/201909010101/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hello World</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
