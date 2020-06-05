@@ -12,16 +12,16 @@
 <title>JDK源码 String类 - Hexo</title>
 
 
-    <meta name="description" content="Java中使用String类来表示字符串，每一个字符串都是String类的实例。因为String类是被final关键词修饰的，所以实际上字符串都是常亮，它们的值在创建之后不能更改，所以可以共享，并且是线程安全的。">
+    <meta name="description" content="Java中使用String类来表示字符串，每一个字符串都是String类的实例。因为String类是被final关键词修饰的，所以实际上字符串都是常量，它们的值在创建之后不能更改，所以可以共享，并且是线程安全的。">
 <meta name="keywords" content="java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JDK源码 String类">
 <meta property="og:url" content="https:&#x2F;&#x2F;hugh6.github.io&#x2F;2020&#x2F;202006051746&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Java中使用String类来表示字符串，每一个字符串都是String类的实例。因为String类是被final关键词修饰的，所以实际上字符串都是常亮，它们的值在创建之后不能更改，所以可以共享，并且是线程安全的。">
+<meta property="og:description" content="Java中使用String类来表示字符串，每一个字符串都是String类的实例。因为String类是被final关键词修饰的，所以实际上字符串都是常量，它们的值在创建之后不能更改，所以可以共享，并且是线程安全的。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;hugh6.github.io&#x2F;images&#x2F;og_image.png">
-<meta property="og:updated_time" content="2020-06-05T09:47:22.204Z">
+<meta property="og:updated_time" content="2020-06-05T09:49:31.369Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;hugh6.github.io&#x2F;images&#x2F;og_image.png">
 
@@ -158,7 +158,7 @@ var _hmt = _hmt || [];
                 <!-- <time class="level-item has-text-grey" datetime="2020-06-05T09:46:07.000Z">2020-06-05</time> -->
                 <time class="level-item has-text-grey" datetime="2020-06-05T09:46:07.000Z"><i class="far fa-calendar-alt">&nbsp;</i>2020-06-05</time>
                 
-                <time class="level-item has-text-grey is-hidden-mobile" datetime="2020-06-05T09:47:22.204Z"><i class="far fa-calendar-check">&nbsp;</i>2020-06-05</time>
+                <time class="level-item has-text-grey is-hidden-mobile" datetime="2020-06-05T09:49:31.369Z"><i class="far fa-calendar-check">&nbsp;</i>2020-06-05</time>
                 
                 
                 <div class="level-item">
@@ -189,7 +189,7 @@ var _hmt = _hmt || [];
             
         </h1> -->
         <div class="content">
-            <p>Java中使用String类来表示字符串，每一个字符串都是String类的实例。因为String类是被final关键词修饰的，所以实际上字符串都是常亮，它们的值在创建之后不能更改，所以可以共享，并且是线程安全的。</p>
+            <p>Java中使用String类来表示字符串，每一个字符串都是String类的实例。因为String类是被final关键词修饰的，所以实际上字符串都是常量，它们的值在创建之后不能更改，所以可以共享，并且是线程安全的。</p>
 <a id="more"></a>
 
 <h2 id="源码分析"><a href="#源码分析" class="headerlink" title="源码分析"></a>源码分析</h2><h3 id="类定义"><a href="#类定义" class="headerlink" title="类定义"></a>类定义</h3><p>String类被声明为final，所以String类不能被继承。实现了三个接口：Serializable、Comparable 和 CharSequence。</p>
