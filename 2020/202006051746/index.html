@@ -21,7 +21,7 @@
 <meta property="og:description" content="Java中使用String类来表示字符串，每一个字符串都是String类的实例。因为String类是被final关键词修饰的，所以实际上字符串都是常量，它们的值在创建之后不能更改，所以可以共享，并且是线程安全的。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;hugh6.github.io&#x2F;images&#x2F;og_image.png">
-<meta property="og:updated_time" content="2020-06-05T09:52:14.198Z">
+<meta property="og:updated_time" content="2020-06-05T09:54:09.440Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;hugh6.github.io&#x2F;images&#x2F;og_image.png">
 
@@ -158,7 +158,7 @@ var _hmt = _hmt || [];
                 <!-- <time class="level-item has-text-grey" datetime="2020-06-05T09:46:07.000Z">2020-06-05</time> -->
                 <time class="level-item has-text-grey" datetime="2020-06-05T09:46:07.000Z"><i class="far fa-calendar-alt">&nbsp;</i>2020-06-05</time>
                 
-                <time class="level-item has-text-grey is-hidden-mobile" datetime="2020-06-05T09:52:14.198Z"><i class="far fa-calendar-check">&nbsp;</i>2020-06-05</time>
+                <time class="level-item has-text-grey is-hidden-mobile" datetime="2020-06-05T09:54:09.440Z"><i class="far fa-calendar-check">&nbsp;</i>2020-06-05</time>
                 
                 
                 <div class="level-item">
@@ -213,7 +213,7 @@ var _hmt = _hmt || [];
 <p>传入的参数是一个字节数组，在赋值给value的时候不是直接赋值，而是重新复制一个数组，将新数组赋值给value，避免外部通过那个数组引用修改String内部的value。</p>
 <figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">String</span><span class="hljs-params">(<span class="hljs-keyword">char</span> value[])</span> </span>&#123;</span><br><span class="line">	<span class="hljs-keyword">this</span>.value = Arrays.copyOf(value, value.length);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>*<em>String(StringBuffer buffer) *</em></p>
+<p><strong>String(StringBuffer buffer)</strong></p>
 <p>这个类型的实例实际上表示的是可变字符串，内部存储也是通过字节数组来存储字符串信息，所以是直接讲传入的可变字符串内部的字符数组复制后，赋值给给value。</p>
 <figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">String</span><span class="hljs-params">(StringBuffer buffer)</span> </span>&#123;</span><br><span class="line">	<span class="hljs-keyword">synchronized</span>(buffer) &#123;</span><br><span class="line">		<span class="hljs-keyword">this</span>.value = Arrays.copyOf(buffer.getValue(), buffer.length());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
